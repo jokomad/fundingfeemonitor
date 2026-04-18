@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bybit Funding Monitor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Roboto+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+
+            <div class="status-bar">
+                <div class="status-dot"></div>
+                <span id="last-sync">Syncing...</span>
+            </div>
+        </header>
+
+        <div id="funding-list" class="funding-list">
+            <!-- Items will be injected here -->
+            <div style="text-align: center; color: var(--text-secondary); padding: 50px;">
+                Scanning for negative rates...
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Modal -->
+    <div id="chart-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modal-symbol">-</div>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="fundingChart"></canvas>
+            </div>
+            <div style="margin-top: 15px; font-size: 0.75rem; color: var(--text-secondary); text-align: center;">
+                Last 24 Hours Funding History
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
