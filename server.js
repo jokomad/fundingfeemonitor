@@ -44,7 +44,7 @@ async function fetchFundingRates() {
                 });
 
                 // Keep only last 72 hours of data 
-                const oneDayAgo = now - 72 * 60 * 60 * 1000;
+                const oneDayAgo = now - 168 * 60 * 60 * 1000;
                 fundingData.history[symbol] = fundingData.history[symbol].filter(h => h.time > oneDayAgo);
             });
             console.log(`Updated ${tickers.length} symbols.`);
